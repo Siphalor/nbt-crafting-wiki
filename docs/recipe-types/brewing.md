@@ -1,0 +1,38 @@
+## About
+With this mod you can also add brewing recipes.
+
+## The JSON
+The three lower slots which are usually bottles are defined with the `base` [ingredient].
+
+The top slot which provides the modifier or ingredient item is set through the [`ingredient`][ingredient].
+
+The resulting potion/anything-that-you-want is defined through the [`result`][result].
+`result` is just the output stack.
+
+These three properties support [dollars](../../dynamic-data/dollars) with the base name `this` referencing the old stack.
+
+[ingredient]: ../../recipe-parts/ingredients/ingredients
+[result]: ../../recipe-parts/results
+
+## Example
+```json
+{
+	"type": "nbtcrafting:brewing",
+	"base": {
+		"item": "minecraft:stone"
+	},
+	"ingredient": {
+		"item": "minecraft:stick"	
+	},
+	"result": {
+		"item": "minecraft:player_head",
+		"data": {
+			"display": {
+				"Name": "nametaginput"
+			},
+			"SkullOwner": "Siphalor"
+		}
+	}
+}
+```
+Brew sticks into cobblestone to get some cool playerheads :P
