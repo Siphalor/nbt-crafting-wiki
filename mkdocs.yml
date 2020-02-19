@@ -17,9 +17,11 @@ nav:
             - Remainders: "recipe-parts/ingredients/remainders.md"
         - Results: "recipe-parts/results.md"
     - Recipe Types:
+        - Vanilla Recipes: "recipe-types/vanilla.md"
         - Anvil Recipes: "recipe-types/anvil.md"
         - Brewing Recipes: "recipe-types/brewing.md"
         - Cauldron Recipes: "recipe-types/cauldron.md"
+        - Modded Recipes: "recipe-types/modded.md"
     - Dynamic Data:
         - Dollars: "dynamic-data/dollars.md"
 
