@@ -1,3 +1,4 @@
+# Brewing Recipes
 ## About
 With this mod you can also add brewing recipes.
 

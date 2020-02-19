@@ -1,3 +1,4 @@
+# Results
 Basically every recipe output has an additional `data` property:
 
 ```json

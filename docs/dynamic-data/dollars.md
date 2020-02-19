@@ -1,3 +1,4 @@
+# Dollars
 Dollars are a technology which allows you to use simple mathematical expressions when applying data.
 
 ## Usage

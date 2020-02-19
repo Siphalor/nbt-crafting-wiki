@@ -1,3 +1,4 @@
+# Anvil Recipes
 ## About
 Nbt Crafting gives you the *magical* ability to forge items to a different result in anvils.
 

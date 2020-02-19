@@ -1,3 +1,4 @@
+# Ingredient Remainders
 Recipe remainders are those things which are left in the crafting grid when crafting.
 
 A good example is the vanilla `minecraft:milk_bucket` in the cake recipe: The bucket stays in the grid.

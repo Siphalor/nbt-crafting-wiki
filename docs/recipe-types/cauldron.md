@@ -1,3 +1,4 @@
+# Cauldron Recipes
 ## About
 
 Nbt Crafting also introduces cauldron recipes. Cauldron brewing works as right-clicking a cauldron with an item stack which then optionally consumes a bit of water and grants the player a resulting stack.

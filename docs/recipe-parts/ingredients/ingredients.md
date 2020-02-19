@@ -1,3 +1,4 @@
+# Ingredients
 Recipe ingredients are a bit more advanced.
 
 ## Basic Usage
