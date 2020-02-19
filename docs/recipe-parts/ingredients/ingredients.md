@@ -1,6 +1,4 @@
 # Ingredients
-Recipe ingredients are a bit more advanced.
-
 ## Basic Usage
 
 The `data` property of each ingredient splits into a `require` and a `deny` section.
