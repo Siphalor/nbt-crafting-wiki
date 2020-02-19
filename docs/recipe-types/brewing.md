@@ -12,6 +12,8 @@ The resulting potion/anything-that-you-want is defined through the [`result`][re
 
 These three properties support [dollars](../../dynamic-data/dollars) with the base name `this` referencing the old stack.
 
+If you're annoyed of typing out potion stacks in your brewing recipe you might wanna look at [this feature](../../utilities#potions-in-recipes).
+
 [ingredient]: ../../recipe-parts/ingredients/ingredients
 [result]: ../../recipe-parts/results
 
