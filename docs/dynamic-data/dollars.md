@@ -14,7 +14,9 @@ Dollars are noted as string values on your desired attributes:
 ```
 
 A dollar is a mathemathical expression with `+`, `-`, `*` and `/` operators as well as parentheses supported.
-_**Operator precedence is not supported yet.**_
+
+!!! danger ""
+	Operator precedence is not supported yet.
 
 ```json
 "data": {
