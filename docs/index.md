@@ -10,7 +10,8 @@ You might also want to add [brewing](recipe-types/brewing), [cauldron](recipe-ty
 
 Go [here](modders.md) if you're a modder and want to work with Nbt Crafting.
 
-This is just a quick recipe example:
+## Example Recipe
+Sometimes one Hello-World-ish example is worth a thousand words.
 
 ```json
 {

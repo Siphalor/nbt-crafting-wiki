@@ -5,7 +5,7 @@ A good example is the vanilla `minecraft:milk_bucket` in the cake recipe: The bu
 
 Just add a `remainder` property to your [ingredient's](../ingredients) item or tag objects.
 
-It works just like [recipe results](../../results) which surely means that you can apply a nbt tag. Additinally [Dollars](../../../dynamic-data/dollars) are supported.
+It works just like [recipe results](../../results) which surely means that you can apply a nbt tag. Additinally [dollars](../../../dynamic-data/dollars) are supported.
 
 *Disclaimer:* You should only use remainders on single stack items. Otherwise there might be some strange behavior 🙂
 

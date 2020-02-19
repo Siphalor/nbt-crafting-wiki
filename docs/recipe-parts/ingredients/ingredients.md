@@ -3,7 +3,7 @@
 
 The `data` property of each ingredient splits into a `require` and a `deny` section.
 
-Like the [output](../../results), these are JSON objects representing the NBT tag of the item.
+Like the [results](../../results), these are JSON objects representing the NBT tag of the item.
 
 All properties with their values referenced in `require` **must** be present with the exact values on the item.
 
