@@ -29,5 +29,5 @@ dependencies {
 
 Finally tell you're users that they'll need to download Nbt Crafting alongside this mod and add a `"nbtcrafting": "*"` entry to the `depends` list in your `fabric.mod.json` file.
 
-## Custom RecipeTypes
+## Custom `RecipeType`s
 If you're adding custom `RecipeType`s you should consider following these [guidelines](recipe-types/modded.md#guidelines-for-mod-authors) to ensure compatibility 🎉.
