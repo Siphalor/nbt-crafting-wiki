@@ -24,6 +24,7 @@ nav:
         - Modded Recipes: "recipe-types/modded.md"
     - Dynamic Data:
         - Dollars: "dynamic-data/dollars.md"
+    - Hints for modders: "modders.md"
 
 markdown_extensions:
     - admonition

@@ -2,7 +2,7 @@
 
 Modded recipe types might work with the features of Nbt Crafting. *Only dollars on results won't work as they need to be handled specially.*
 
-## Notes for mod authors
+## Guidelines for mod authors
 
 If you want your mod to be compatible with Nbt Crafting's features pay attention to the following guidelines:
 

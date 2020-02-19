@@ -8,7 +8,9 @@ For detailed information see [recipe results](recipe-parts/ingredients/remainder
 
 You might also want to add [brewing](recipe-types/brewing), [cauldron](recipe-types/cauldron) or [anvil](recipe-types/anvil) recipes.
 
-This is a quick example:
+Go [here](modders.md) if you're a modder and want to work with Nbt Crafting.
+
+This is just a quick recipe example:
 
 ```json
 {
