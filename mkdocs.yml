@@ -20,7 +20,7 @@ nav:
         - Anvil: "recipe-types/anvil.md"
         - Brewing: "recipe-types/brewing.md"
         - Cauldron: "recipe-types/cauldron.md"
-    - Dollars:
+    - Dynamic Data:
         - Dollars: "dynamic-data/dollars.md"
 
 markdown_extensions:
