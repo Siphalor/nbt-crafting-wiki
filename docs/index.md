@@ -2,8 +2,8 @@
 
 Nbt Crafting is a mod which finally introduces nbt-related recipes.
 
-[![curseforge downloads](http://cf.way2muchnoise.eu/full_nbt-crafting_downloads.svg){: .x-img-badge }](https://minecraft.curseforge.com/projects/nbt-crafting)
-[![curseforge mc versions](http://cf.way2muchnoise.eu/versions/nbt-crafting.svg){: .x-img-badge }](https://minecraft.curseforge.com/projects/nbt-crafting)
+[![curseforge downloads](https://cf.way2muchnoise.eu/full_nbt-crafting_downloads.svg){: .x-img-badge }](https://minecraft.curseforge.com/projects/nbt-crafting)
+[![curseforge mc versions](https://cf.way2muchnoise.eu/versions/nbt-crafting.svg){: .x-img-badge }](https://minecraft.curseforge.com/projects/nbt-crafting)
 
 ---
 
