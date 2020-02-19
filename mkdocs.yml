@@ -27,6 +27,7 @@ nav:
 
 markdown_extensions:
     - admonition
+    - fontawesome_markdown
     - pymdownx.details
       #- pymdownx.tabbed
     - pymdownx.tasklist
