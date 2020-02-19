@@ -10,3 +10,5 @@ If you want your mod to be compatible with Nbt Crafting's features pay attention
 - To deserialize recipe results use `ShapedRecipe.getItemStack()`: this method is patched to include nbt data.
 - If you'd like to use custom remainders in your recipes make sure to implement the `getPreviewInputs()` method on your `Recipe` class. Nbt Crafting needs this to get hold on your ingredients :fa-smile-o:
 - If you want dollars to be usable in the result you will need to use Nbt Crafting's `RecipeUtil`
+
+See more informations about modding with Nbt Crafting [here](../../modders.md).
