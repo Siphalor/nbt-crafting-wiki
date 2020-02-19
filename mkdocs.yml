@@ -2,7 +2,8 @@ site_name: "Nbt Crafting"
 site_author: "Siphalor"
 
 repo_name: "GitHub"
-repo_url: "https://github.com/Siphalor/nbt-crafting-wiki"
+repo_url: "https://github.com/Siphalor/nbt-crafting"
+edit_uri: "../nbt-crafting-wiki/edit/v1/docs/"
 
 extra:
     logo: "img/logo.png"
