@@ -26,6 +26,7 @@ nav:
         - Dollars: "dynamic-data/dollars.md"
     - Hints for modders: "modders.md"
     - Utilities: "utilities.md"
+    - Experimental Features: "experimental.md"
 
 markdown_extensions:
     - attr_list
