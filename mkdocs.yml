@@ -3,11 +3,11 @@ site_author: "Siphalor"
 
 repo_name: "GitHub"
 repo_url: "https://github.com/Siphalor/nbt-crafting"
-edit_uri: "../nbt-crafting-wiki/edit/v1/docs/"
+edit_uri: "../nbt-crafting-wiki/edit/v2/docs/"
 
 extra:
     logo: "img/logo.png"
-    version: "v1"
+    version: "v2"
 
 nav:
     - Home: "index.md"

@@ -1,4 +1,4 @@
-# Welcome to the Nbt Crafting wiki!
+# Welcome to the Nbt Crafting 2.0 wiki!
 
 Nbt Crafting is a mod which finally introduces nbt-related recipes.
 
