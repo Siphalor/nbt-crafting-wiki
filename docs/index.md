@@ -8,7 +8,7 @@ Nbt Crafting is a mod which finally introduces nbt-related recipes.
 ---
 
 !!! note
-	[Click here to see notes about updating to v2](../updating)
+	[Click here to see notes about updating to v2](updating)
 
 For detailed information see [recipe results](recipe-parts/ingredients/remainders) and [recipe ingredients](recipe-parts/ingredients/ingredients).
 
