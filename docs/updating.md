@@ -27,7 +27,7 @@ More changes will be added to this page while working one the update.
 Most notably dollars changed completely and has also been moved to the `de.siphalor.nbtcrafting.dollar` package
 ### API
 
-- RecipeUtil now expects `Map<String, Object>` instead of `Map<String, CompoundTag` - you can now put in numbers and String too - have fun 😉
+- `RecipeUtil` now expects `Map<String, Object>` instead of `Map<String, CompoundTag` - you can now put in `Number`s and `String`s too - have fun 😉
 - `ServerRecipe` has been moved into the new `de.siphalor.nbtcrafting.api` package
 - **`NbtHelper`**
 	- This, `NbtNumberRange` and `NbtException` can now be found in `de.siphalor.nbtcrafting.api.nbt`
