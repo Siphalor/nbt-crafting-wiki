@@ -11,6 +11,7 @@ The resulting potion/anything-that-you-want is defined through the [`result`][re
 `result` is just the output stack.
 
 [Dollars](../../dynamic-data/dollars) are supported with the following entries:
+
 - `ingredient`: is the ingredient's data
 - `base`: is the data of the current base slot
 
