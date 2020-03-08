@@ -1,7 +1,7 @@
 # Cauldron Recipes
 ## About
 
-Nbt Crafting also introduces cauldron recipes. Cauldron brewing works as right-clicking a cauldron with an item stack which then optionally consumes a bit of water and grants the player a resulting stack.
+Nbt Crafting also introduces cauldron recipes. Cauldron brewing means right-clicking a cauldron with an item stack which then optionally consumes a bit of water and grants the player a resulting stack. You can also define a [remainder].
 
 ## The JSON
 Cauldron recipes use the `nbtcrafting:cauldron` recipe type.
@@ -9,6 +9,7 @@ Cauldron recipes use the `nbtcrafting:cauldron` recipe type.
 They use an [ingredient] as `input` and a [`result`][result] for the item processing. The water consuming is handled through the `levels` property which is a number specifying how many levels to consume.
 
 [ingredient]: ../../recipe-parts/ingredients/ingredients
+[remainder]: ../../recipe-parts/ingredients/remainders
 [result]: ../../recipe-parts/results
 
 ## Example
