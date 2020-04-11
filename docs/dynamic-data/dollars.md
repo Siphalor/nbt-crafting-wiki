@@ -2,7 +2,7 @@
 Dollars are a technology which allows you to use simple mathematical expressions when applying data.
 
 ## Usage
-In your [recipe output's](../../recipe-parts/results) and [recipe remainder's](../../recipe-parts/ingredients/remainders) data objects you may use dollar notation on every property which is not (recursively) contained in a list.
+In your [recipe output's](../../recipe-parts/results) and [recipe remainder's](../../recipe-parts/ingredients/remainders) data objects you may use dollar notation on every property. 
 
 Dollars are noted as string values on your desired attributes:
 
@@ -13,10 +13,12 @@ Dollars are noted as string values on your desired attributes:
 }
 ```
 
-A dollar is a mathemathical expression with `+`, `-`, `*` and `/` operators as well as parentheses supported.
+A dollar is a mathemathical expression with `+`, `-`, `*`, `/` and `%` (modulo) operators as well as parentheses supported.
 
-!!! danger ""
-	Operator precedence is not supported yet.
+Since version 2.0 you can also perform string and list operations. 
+
+!!! info "Information"
+    Operator precedence is supported since version 2.0
 
 ```json
 "data": {
