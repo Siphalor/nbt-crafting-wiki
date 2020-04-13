@@ -2,3 +2,11 @@ img.x-img-badge {
 	border: none;
 	margin: 0;
 }
+
+.wm-top-container {
+	overflow-x: visible;
+}
+
+.dropdown-menu {
+	min-width: auto;
+}
