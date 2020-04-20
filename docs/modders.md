@@ -17,7 +17,7 @@ repositories {
 }
 ```
 
-!!! info "Attention!"
+!!! note "Attention!"
 	The here mentioned `dependencies` section is different from the equally-named section in the `publishing` region. If you have a new project then you will most likely have to create the `dependencies` section yourself. It's usually put above the `repositories` section.
 
 Then you'll need Gradle which dependency you need. I personally recommend adding Nbt Crafting as a `modImplementation` dependency:
@@ -30,7 +30,7 @@ dependencies {
 }
 ```
 
-*Change it to `1.16-2.0-SNAPSHOT` instead if you want to develop for 1.16*
+*Change it to `1.16-2.0-SNAPSHOT` instead if you want to develop for 1.16.*
 
 !!! warning "Problems with pulling the dependency"
 	Since I currently rely on JitPack as maven, it may take a few minutes for JitPack to build new commits. This usually results in time-out issues in Gradle. Just wait a while and check again. If it remains stuck then message me.
