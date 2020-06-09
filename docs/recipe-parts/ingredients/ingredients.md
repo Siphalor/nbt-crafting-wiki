@@ -32,7 +32,7 @@ Example:
 	...
 }
 ```
-This would require a diamond sword with damage 2 but which seams to be unhappy 😢
+This would require a diamond sword with damage 2 which seams to be unhappy 😢
 
 ## Advanced usage
 
