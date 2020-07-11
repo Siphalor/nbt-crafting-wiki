@@ -25,6 +25,7 @@ nav:
         - Modded Recipes: "recipe-types/modded.md"
     - Dynamic Data:
         - Dollars: "dynamic-data/dollars.md"
+        - Nbt Merging: "dynamic-data/nbt-merging.md"
     - Hints for modders: "modders.md"
     - Utilities: "utilities.md"
     - Updating to v2: "updating.md"
@@ -34,9 +35,11 @@ markdown_extensions:
     - attr_list
     - admonition
     - fontawesome_markdown
+    - md_in_html
     - pymdownx.details
       #- pymdownx.tabbed
     - pymdownx.tasklist
+    - tables
     - toc:
         permalink: true
 
