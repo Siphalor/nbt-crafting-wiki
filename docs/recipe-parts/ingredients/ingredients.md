@@ -32,14 +32,14 @@ Example:
 	...
 }
 ```
-This would require a diamond sword with damage 2 but which seams to be unhappy 😢
+This would require a diamond sword with damage 2 which seams to be unhappy 😢
 
 ## Advanced usage
 
 ### Wildcards
 
 If you use an empty string (`""`) as a value this is a wildcard and will match all possible values.
-So this means requiring/denying will go right if the given property even exists.
+So this means requiring/denying will match if the given property even exists.
 
 ### Number ranges
 If you want to apply a recipe if a numeric nbt value is in a specific range, you can do this by using a value of the form `"$a..b"`. Where a is the lower value and b the upper value. You can leave out either of it if you'd like to use infinity at its position.
