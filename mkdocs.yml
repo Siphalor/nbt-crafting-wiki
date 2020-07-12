@@ -10,7 +10,7 @@ extra:
     logo: "img/logo.png"
     version: "v1"
     nav_links:
-      - text: "Nbt Crafting wiki v2"
+      - text: "Nbt Crafting v2"
         icon: "book"
         url: "../v2"
       - text: "Curseforge"
