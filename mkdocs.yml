@@ -10,9 +10,9 @@ extra:
     logo: "img/logo.png"
     version: "v2"
     nav_links:
-      - text: "Nbt Crafting v2"
+      - text: "Nbt Crafting v1"
         icon: "book"
-        url: "../v2"
+        url: "../v1"
       - text: "Curseforge"
         icon: "fire"
         url: "https://www.curseforge.com/minecraft/mc-mods/nbt-crafting"

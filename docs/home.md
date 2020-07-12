@@ -6,15 +6,15 @@ Nbt Crafting is a mod which finally introduces nbt-related recipes.
 [![curseforge mc versions](https://cf.way2muchnoise.eu/versions/nbt-crafting.svg){: .x-img-badge }](https://minecraft.curseforge.com/projects/nbt-crafting)
 
 ---
+/
+For detailed information see [recipe results](../recipe-parts/ingredients/remainders) and [recipe ingredients](../recipe-parts/ingredients/ingredients).
 
 !!! note
 	[Click here to see notes about updating to v2](updating)
 
-For detailed information see [recipe results](recipe-parts/ingredients/remainders) and [recipe ingredients](recipe-parts/ingredients/ingredients).
+You might also want to add [brewing](../recipe-types/brewing), [cauldron](../recipe-types/cauldron) or [anvil](../recipe-types/anvil) recipes.
 
-You might also want to add [brewing](recipe-types/brewing), [cauldron](recipe-types/cauldron) or [anvil](recipe-types/anvil) recipes.
-
-Go [here](modders.md) if you're a modder and want to work with Nbt Crafting.
+Go [here](../modders.md) if you're a modder and want to work with Nbt Crafting.
 
 ## Example Recipe
 Sometimes one Hello-World-ish example is worth a thousand words.
