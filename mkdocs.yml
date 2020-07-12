@@ -9,9 +9,19 @@ edit_uri: "../nbt-crafting-wiki/edit/v2/docs/"
 extra:
     logo: "img/logo.png"
     version: "v2"
+    nav_links:
+      - text: "Nbt Crafting v2"
+        icon: "book"
+        url: "../v2"
+      - text: "Curseforge"
+        icon: "fire"
+        url: "https://www.curseforge.com/minecraft/mc-mods/nbt-crafting"
+      - text: "Discord"
+        icon: "comments-o"
+        url: "https://discord.gg/6gaXmbj"
 
 nav:
-    - Home: "index.md"
+    - Home: "home.md"
     - Recipe Parts:
         - Ingredients:
             - Ingredients: "recipe-parts/ingredients/ingredients.md"
@@ -44,9 +54,9 @@ markdown_extensions:
         permalink: true
 
 theme:
-    name: "windmill"
-    custom_dir: "custom_theme"
+    name: "custommill"
     favicon: "img/favicon.ico"
+    main_color: "#3e7726"
 
 extra_css:
     - css/extra.css
