@@ -10,14 +10,14 @@ extra:
     logo: "img/logo.png"
     version: "v1"
     nav_links:
-      - text: "Nbt Crafting v2 wiki"
+      - text: "Nbt Crafting wiki v2"
         icon: "book"
         url: "../v2"
       - text: "Curseforge"
         icon: "fire"
         url: "https://www.curseforge.com/minecraft/mc-mods/nbt-crafting"
       - text: "Discord"
-        icon: "chat-empty"
+        icon: "comments-o"
         url: "https://discord.gg/6gaXmbj"
 
 nav:
