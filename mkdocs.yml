@@ -21,7 +21,7 @@ extra:
         url: "https://discord.gg/6gaXmbj"
 
 nav:
-    - Home: "index.md"
+    - Home: "home.md"
     - Recipe Parts:
         - Ingredients:
             - Ingredients: "recipe-parts/ingredients/ingredients.md"
