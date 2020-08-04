@@ -13,7 +13,7 @@ Dollars are noted as string values on your desired attributes:
 }
 ```
 
-A dollar is a mathemathical expression with `+`, `-`, `*`, `/` and `%` (modulo) operators as well as parentheses supported.
+A dollar is a mathematical expression with `+`, `-`, `*`, `/` and `%` (modulo) operators as well as parentheses supported.
 
 ## Data Types
 Since version 2.0 Dollars are data type aware.
@@ -36,6 +36,11 @@ Existing data types are:
 
 !!! warning
 	Be careful when dividing numbers in dollars. `5 / 2` would normally resolve to `2` because whole number division would be used. `5.0 / 2` would instead to resolve to the possibly wanted `2.5`.
+
+## References
+A key feature of dollars is referencing the nbt data of [ingredients](../../recipe-parts/ingredients/ingredients). This can be done by referencing the ingredient with it's _id_. The _id_ depends on the type of the recipe - a lot of the recipe types use `base` and `ingredient` for the respective ingredients. Shaped and shapeless recipes are a notable exception to this (As they have more than two ingredients, lol).
+
+A full list of all reference ids for the recipe types can be found [here](../dollar-references).
 
 ## Operators
 
