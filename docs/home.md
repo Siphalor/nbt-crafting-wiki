@@ -14,7 +14,7 @@ For detailed information see [recipe results](../recipe-parts/ingredients/remain
 
 You might also want to add [brewing](../recipe-types/brewing), [cauldron](../recipe-types/cauldron) or [anvil](../recipe-types/anvil) recipes.
 
-Go [here](../modders.md) if you're a modder and want to work with Nbt Crafting.
+Go [here](../modders) if you're a modder and want to work with Nbt Crafting.
 
 ## Example Recipe
 Sometimes one Hello-World-ish example is worth a thousand words.
