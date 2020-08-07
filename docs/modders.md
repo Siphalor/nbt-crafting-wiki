@@ -20,7 +20,7 @@ repositories {
 !!! note "Attention!"
 	The here mentioned `repositories` section is different from the equally-named section in the `publishing` region. If you have a new project then you will most likely have to create the `repositories` section yourself. It's usually put above the `dependencies` section.
 
-Then you'll need Gradle which dependency you need. I personally recommend adding Nbt Crafting as a `modImplementation` dependency:
+Then you'll need to tell Gradle which dependencies you need. I personally recommend adding Nbt Crafting as a `modImplementation` dependency:
 
 ```gradle
 dependencies {
