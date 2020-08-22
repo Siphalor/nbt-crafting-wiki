@@ -1,6 +1,6 @@
 # Updating from v1
 
-!!! danger "Important note for mod pack authors"
+!!! warning "Important note for mod pack authors"
 	Updating to v2 breaks compatibility to v1. v1 players won't be able to join on v2 servers and the other way around.
 
 More changes will be added to this page while working one the update.
