@@ -32,7 +32,7 @@ Most notably dollars changed completely and has also been moved to the `de.sipha
 - **`NbtHelper`**
 	- This, `NbtNumberRange` and `NbtException` can now be found in `de.siphalor.nbtcrafting.api.nbt`
 	- JSON paths have mostly been updated to `String[]`
-	- ìterateTags` has been moved to `NbtIterator`
+	- `iterateTags` has been moved to `NbtIterator`
 
 
 ### Other stuff
