@@ -16,7 +16,7 @@ Basically every recipe output has an additional `data` property:
 }
 ```
 
-The data attribute represents the items nbt tag in JSON. Additionally [dollars](../../dynamic-data/dollars) may be used for advanced recipes.
+The data attribute represents the items nbt tag in JSON. Before the conversion to nbt data happens the JSON is passed through Nbt Crafting's [JSON Preprocessor](../../utilities#json-preprocessor). Additionally [dollars](../../dynamic-data/dollars) may be used for more complicated recipes that require processing the data.
 
 It may look like this:
 

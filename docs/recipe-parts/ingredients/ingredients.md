@@ -3,7 +3,7 @@
 
 The `data` property of each ingredient splits into a `require` and a `deny` section.
 
-Like the [results](../../results), these are JSON objects representing the NBT tag of the item.
+Like the [results](../../results), these are JSON objects representing the NBT tag of the item. As always the json data is passed through the [JSON Preprocessor](../../../utilities#json-preprocessor).
 
 All properties with their values referenced in `require` **must** be present with the exact values on the item.
 
@@ -53,7 +53,7 @@ Example:
 This will match all items with a `Damage` value of 40 or less.
 
 ## Potions
-Potions are annoying to clarify especially when working with [brewing recipes](../recipe-types/brewing). Therefore Nbt Crafting introduces a special shorthand for it.
+Potions are annoying to clarify especially when working with [brewing recipes](../../../recipe-types/brewing). Therefore Nbt Crafting introduces a special shorthand for it.
 
 You can now use `potion` instead of the `item` key in all ingredients, remainders and results. An example brewing recipe using this feature could look like this:
 
