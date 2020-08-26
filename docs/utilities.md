@@ -11,7 +11,7 @@ Minecraft's handling of texts for example in item names is often a bit annoying 
 
 ```json
 "display": {
-	"Name": "[{\"text\":\"Silky \",\"italic\":true},{\"text\":\"Pick\",\"color\":"blue\"}]"
+	"Name": "[{\"text\":\"Silky \",\"italic\":true},{\"text\":\"Pick\",\"color\":\"blue\"}]"
 }
 ```
 
