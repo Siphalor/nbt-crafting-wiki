@@ -27,7 +27,7 @@ Nbt Crafting grants you the ability to write this part of the data as normal jso
 }
 ```
 
-You can do the same for JSON Objects. You then use `"nbtcrafting:stringify"` as key and use `true`{: .hljs .json } as the value:
+You can do the same for JSON Objects. You then use `"nbtcrafting:stringify"` as key and use `true` as the value:
 
 ```json
 "display": {
