@@ -7,6 +7,8 @@ Nbt Crafting is a mod which finally introduces nbt-related recipes.
 
 ---
 
+If you want to get started with datapacks and recipes in Minecraft you can check out the [Resources](../tools) site.
+
 For detailed information see [recipe results](../recipe-parts/ingredients/remainders) and [recipe ingredients](../recipe-parts/ingredients/ingredients).
 
 !!! note

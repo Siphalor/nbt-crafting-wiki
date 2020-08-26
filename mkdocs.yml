@@ -41,6 +41,7 @@ nav:
     - Utilities: "utilities.md"
     - Updating to v2: "updating.md"
     - Experimental Features: "experimental.md"
+    - Resources: "tools.md"
 
 markdown_extensions:
     - attr_list
