@@ -34,7 +34,7 @@ Example:
 ```
 This would require a diamond sword with damage 2 which seams to be unhappy 😢
 
-## Advanced usage
+## Advanced Matching
 
 ### Wildcards
 
@@ -51,3 +51,23 @@ Example:
 }
 ```
 This will match all items with a `Damage` value of 40 or less.
+
+## Potions
+Potions are annoying to clarify especially when working with [brewing recipes](../recipe-types/brewing). Therefore Nbt Crafting introduces a special shorthand for it.
+
+You can now use `potion` instead of the `item` key in all ingredients, remainders and results. An example brewing recipe using this feature could look like this:
+
+```json
+{
+	"type": "nbtcrafting:brewing",
+	"base": {
+		"potion": "minecraft:regeneration"
+	},
+	"ingredient": {
+		"item": "minecraft:stick"	
+	},
+	"result": {
+		"potion": "minecraft:swiftness"
+	}
+}
+```

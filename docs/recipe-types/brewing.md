@@ -15,7 +15,7 @@ The resulting potion/anything-that-you-want is defined through the [`result`][re
 - `ingredient`: is the ingredient's data
 - `base`: is the data of the current base slot
 
-If you're annoyed of typing out potion stacks in your brewing recipe you might wanna look at [this feature](../../utilities#potions-in-recipes).
+If you're annoyed of typing out potion stacks in your brewing recipe you might wanna look at [this feature](../../recipe-parts/ingredients/ingredients#potions).
 
 [ingredient]: ../../recipe-parts/ingredients/ingredients
 [result]: ../../recipe-parts/results
