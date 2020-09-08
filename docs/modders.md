@@ -3,9 +3,7 @@
 Hello fellow modder, here's a quick overview of what you probably wanna know about working with Nbt Crafting:
 
 ## Setting up Nbt Crafting
-To use Nbt Crafting you'll need to include it in your development environment. I currently recommend using [jitpack.io](https://jitpack.io) as I don't have an own maven server yet.
-
-To make use of the Jitpack repository you'll need to add it **to the bottom of the `repositories` section** in your `build.gradle` file. The result should like this:
+To use Nbt Crafting you'll need to include it in your development environment. I publish the mod artifacts on my maven. To use it you need to add it to the `repositories` in your `build.gradle` file. The result should like this:
 
 ```gradle
 repositories {
