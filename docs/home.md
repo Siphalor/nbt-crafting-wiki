@@ -12,7 +12,7 @@ If you want to get started with datapacks and recipes in Minecraft you can check
 For detailed information see [recipe results](../recipe-parts/ingredients/remainders) and [recipe ingredients](../recipe-parts/ingredients/ingredients).
 
 !!! note
-	[Click here to see notes about updating to v2](updating)
+	[Click here to see notes about updating to v2](../updating)
 
 You might also want to add [brewing](../recipe-types/brewing), [cauldron](../recipe-types/cauldron) or [anvil](../recipe-types/anvil) recipes.
 
