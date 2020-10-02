@@ -2,7 +2,7 @@
 ## About
 Nbt Crafting gives you the *magical* ability to forge items to a different result in anvils.
 
-!!! danger
+!!! warning
 	[Remainders](../../recipe-parts/ingredients/remainders) are not supported!
 	
 	Also the recipe will consume whole stacks of items instead of just taking one of it.
