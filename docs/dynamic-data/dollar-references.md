@@ -13,9 +13,10 @@ The main purpose of this site is to collect all _ingredient ids_ for the various
 | Stonecutting Recipes |_^                          ^_|_^                                                          ^_|
 | [Anvil Recipes]      | A `base` and an `ingredient` | `base` and `ingredient` accordingly                          |
 | [Brewing Recipes]    |                              |                                                              |
-| [Cauldron Recipes]   |_^                          ^_|_^                                                          ^_|
+| [Cauldron Recipes]   |                              |                                                              |
+| [Smithing Recipes]   |_^                          ^_|_^                                                          ^_|
 
 [Anvil Recipes]: ../../recipe-types/anvil
 [Brewing Recipes]: ../../recipe-types/brewing
 [Cauldron Recipes]: ../../recipe-types/cauldron
-
+[Smithing Recipes]: ../../recipe-types/vanilla
