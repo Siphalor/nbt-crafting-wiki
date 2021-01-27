@@ -100,7 +100,7 @@ The `paths` object specifies paths as its keys and the corresponding [merge beha
 
 To allow more complex path notations you can fence your paths in slashes (these things: `/`, lol) and then they *magically* become [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). I'm not gonna explain these things here but [regex101.com](https://regex101.com) is a good place to test them out. Keep in mind to escape all brackets and dots in your path with a double backslash!
 
-An example (untested):
+An example:
 ```json
 {
 	"type": "crafting_shapeless",
@@ -116,7 +116,7 @@ An example (untested):
 		"item": "minecraft:diamond_sword",
 		"data": {
 			"$": {
-				"value": "$i0",
+				"value": "i0",
 				"paths": {
 					"/Enchantments\\[\\d+\\]/": "append"
 				}
