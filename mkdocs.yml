@@ -13,11 +13,15 @@ extra:
       - text: "Nbt Crafting v1"
         icon: "book"
         url: "../v1"
+      - text: "Modrinth"
+        icon: "chess-rook"
+        url: "https://www.modrinth.com/mod/nbt-crafting"
       - text: "Curseforge"
         icon: "fire"
         url: "https://www.curseforge.com/minecraft/mc-mods/nbt-crafting"
       - text: "Discord"
-        icon: "comments-o"
+        icon: "discord"
+        icon_type: "brand"
         url: "https://discord.gg/6gaXmbj"
 
 nav:
