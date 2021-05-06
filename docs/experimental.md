@@ -13,7 +13,7 @@ So let's talk about the problems and why this is in the experimental section:
 
 - I didn't do a lot of testing on that so even if I say that it might work it could actually be completely broken
 - A lot of the vanilla code, modded code and even my own code (in *Mouse Wheelie* for example) is based on the idea that a recipe has a constant output. This means that this kind of code will query the result count for one stack and then multiply it with the amount of items to get the maximum crafts. The concept of a recipe that can be crafted infinitely (using remainders) and produces dynamicly set result counts is too much for this code.
-- Remainders are in many situations a bit problematic. This is why I usually advice to only use them on non-stackable items. If you keep to that I can give you at least a little guarantee that dynamic stack counts might work with them.
+- Remainders are in many situations highly problematic. This is why I usually advice to only use them on non-stackable items. If you keep to that I can give you at least a little guarantee that dynamic stack counts might work with them.
 
 ## `stat_changed` Advancement Trigger
 
