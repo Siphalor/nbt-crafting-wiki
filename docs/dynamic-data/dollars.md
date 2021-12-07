@@ -116,6 +116,7 @@ You can also give it a string or even pump in an expression that evaluates to a 
 There is not too much to say about arithmetic operators with numbers. They basically work as you would expect. One thing to know is that concerning [data types](#data-types), they'll always chose the biggest data type provided to the operator (`3 + 4.0` = `7.0`).
 
 Where it gets interesting is using arithmetic operators for string operations:
+
 - `+`: Will concatenate a string with any given value
 - `-`: Will convert the second value to a string and then remove it from the base string.
 - `*`: If the second operator is a number, this operator will repeat the first string that number of times.
