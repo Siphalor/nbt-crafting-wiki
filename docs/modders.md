@@ -36,9 +36,11 @@ dependencies {
 *Change it to `nbtcrafting-1.16:2+` instead if you want to develop for 1.16.*
 
 You can see the latest maven releases here:
+
 [![latest 1.15](https://img.shields.io/maven-metadata/v?label=latest%201.15&metadataUrl=https%3A%2F%2Fmaven.siphalor.de%2Fde%2Fsiphalor%2Fnbtcrafting-1.15%2Fmaven-metadata.xml){: .x-img-badge }](https://maven.siphalor.de/de/siphalor/nbtcrafting-1.15/)
 [![latest 1.16](https://img.shields.io/maven-metadata/v?label=latest%201.16&metadataUrl=https%3A%2F%2Fmaven.siphalor.de%2Fde%2Fsiphalor%2Fnbtcrafting-1.16%2Fmaven-metadata.xml){: .x-img-badge }](https://maven.siphalor.de/de/siphalor/nbtcrafting-1.16/)
 [![latest 1.17](https://img.shields.io/maven-metadata/v?label=latest%201.17&metadataUrl=https%3A%2F%2Fmaven.siphalor.de%2Fde%2Fsiphalor%2Fnbtcrafting-1.17%2Fmaven-metadata.xml){: .x-img-badge }](https://maven.siphalor.de/de/siphalor/nbtcrafting-1.17/)
+[![latest 1.18](https://img.shields.io/maven-metadata/v?label=latest%201.18&metadataUrl=https%3A%2F%2Fmaven.siphalor.de%2Fde%2Fsiphalor%2Fnbtcrafting-1.18%2Fmaven-metadata.xml){: .x-img-badge }](https://maven.siphalor.de/de/siphalor/nbtcrafting-1.18/)
 
 Finally tell you're users that they'll need to download Nbt Crafting alongside this mod and add a `"nbtcrafting": "*"` entry to the `depends` list in your `fabric.mod.json` file.
 
