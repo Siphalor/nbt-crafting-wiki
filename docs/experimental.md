@@ -1,4 +1,42 @@
 # Experimental Features :fa-flask:
+## Wrapped recipes
+You might be aware of the mess that KubeJS is doing to recipes.
+That mess effectively circumvents Nbt Crafting's modifications.
+
+Since KubeJS leaves officially modded recipe types alone, there's the `nbtcrafing:wrapped` recipe type.
+As the name implies, it's nothing more but a simple wrapper over the normal recipes.
+
+It looks only for a single key, `recipe`. That field can contain any other recipe that you actually want to use.
+
+### Example
+
+```json
+{
+   "type": "nbtcrafting:wrapped",
+    "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+            {
+                "item": "minecraft:gravel"
+            }
+        ],
+        "result": {
+            "item": "minecraft:flint",
+            "data": {
+                "display": {
+                   "Name": "{\"text\":\"Pointy Stone\"}"
+                }
+            }
+        }
+    }
+}
+```
+
+### Why is this experimental?
+At the time of writing, this is still pretty new and I'm not sure if I like and there's no better alternative.
+
+Also, I don't really like the name of the type, if you know a better one, let me know.
+
 ## Dynamic item stack count
 First of:
 
