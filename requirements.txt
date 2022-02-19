@@ -1,5 +1,5 @@
 mkdocs ~= 1.2
-mkdocs-custommill ~= 1.2.2
+mkdocs-custommill ~= 1.2.7
 git+https://github.com/Neepawa/cell_row_span
 fontawesome-markdown ~= 0.2
 pymdown-extensions ~= 8.1
