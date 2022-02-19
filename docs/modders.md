@@ -12,6 +12,11 @@ repositories {
 		name "Siphalor's Maven"
 		url "https://maven.siphalor.de"
 	}
+	// For some testing dependencies of Nbt Crafting
+	maven {
+		name "Jitpack"
+		url "https://jitpack.io"
+	}
 }
 ```
 
