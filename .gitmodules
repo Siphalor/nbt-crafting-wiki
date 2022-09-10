@@ -1,0 +1,3 @@
+[submodule "nbt-crafting"]
+	path = nbt-crafting
+	url = https://github.com/Siphalor/nbt-crafting.git

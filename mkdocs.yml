@@ -55,7 +55,20 @@ markdown_extensions:
     - md_in_html
     - pymdownx.details
       #- pymdownx.tabbed
+    - pymdownx.magiclink:
+        provider: "github"
+        user: "Siphalor"
+        repo: "nbt-crafting"
+        repo_url_shorthand: true
+        repo_url_shortener: true
+        normalize_issue_symbols: true
+    - pymdownx.snippets:
+        base_path:
+          - .
+          - nbt-crafting/src/testmod/resources/data/nbtcrafting3_testmod/recipes/wiki
+        check_paths: true
     - pymdownx.tasklist
+    - markdown.extensions.def_list
     - tables
     - toc:
         permalink: true

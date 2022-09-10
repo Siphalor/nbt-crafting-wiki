@@ -1,135 +1,196 @@
 # Nbt Merging
-## Introduction - a brief history
-Nbt merging, inheriting or copying, whatever you like to call it, was orignally just a special case of [dollars](../dollars).
 
-It worked really simple: Dollars let you access any kind of data so why not copy it onto [results](../../nbt-capabilities/results) or [remainders](../remainders.md)?
+This page extends upon the syntax of simple [dollars](../dollars), by using the special `$` key inside of `data`.
+If you're unfamiliar with that, you should go and understand the basic principles of dollars first.
 
-This quickly rose the first problem: What would you do if you wanted to copy the whole data? You can't really specify the target for the dollar expression.
+This site first focuses on specific use cases and then later goes into deeper detail with the [specification](#specification).
+You can jump to specific sections of this site in the navigation menu.
 
-The solution was the special `$` key in `data` tags. It is used as a link to the current object:
+## Rationale
 
-```json
-{
-	"type": "crafting_shapeless",
-	"ingredients": [
-		{
-			"item": "minecraft:diamond"
-		},
-		{
-			"item": "minecraft:diamond_sword"
-		}
-	],
-	"result": {
-		"item": "minecraft:diamond_sword",
-		"data": {
-			"$": "$ i1",
-			"some_custom_tag": true
-		}
-	}
-}
+While the simple dollars are usually enough to calculate values for a few fields,
+they aren't able to model certain common recipe behaviors.
+
+Merge dollars are an extension that allow to copy data from ingredients
+and selectively specify how conflicts like multiple enchantments should be handled.
+
+An important thing to understand is,
+that the data object you specify is treated as the base where all the merges are applied to.
+
+An example process to determine the result may be as following.
+```mermaid
+flowchart LR
+	Base[result.data] --> MergeBase[Merge from base]
+	MergeBase --> MergeIngredient[Merge from ingredient]
+	MergeIngredient ==> Result
 ```
 
-As of version 2 we can also get rid of the additional dollar sign in merge expressions. In fact: I deprecated it.
+## Copying data from a single source
 
-This worked perfectly fine for quite some time and might still be anything that you need. So if you just want to statically copy some data **then stop here**.
+The simplest case of a "merge" is to copy NBT data from a single source.  
+In vanilla Minecraft, an example for these kinds of recipes are smithing recipes,
+where all NBT data from the `base` ingredient is just directly copied over.
 
-If you're still reading this then that's apparently not enough for you. 
+For example, a recipe upgrading an iron sword to a diamond sword could be written as following:
 
-Like you might have noticed, this design has some builtin flaws that don't really hurt in simple scenarios but become an absolute pain in specific cases: Let's talk about this problems:
+```json
+--8<-- "merging/simple_copy.json"
+```
 
-1. Obviously this system doesn't let you combine the data from multiple sources. You could only ever copy the data from one ingredient.
-2. Secondly what about lists? This was the main issue that popped up with this design and the good ol' [issue #14](https://github.com/Siphalor/nbt-crafting/issues/14) accompanied me for quite some time.
-3. Based on 2: What if I want to set a value *but only if it's not already present*. Ok you could just create multiple recipes but where's the fun? You could also not use [dollars](../dollars) and write thousands of "simple" nbt recipes but you don't.
+you may also add data to the sword by using additional keys besides the `$` key.
+the next example recipe allows you to create an iron sword with a purple name.
+when using the recipe, echantments will be transferred but the name will always be replaced by the new one.
 
-So let's get to the solution:
+```json
+--8<-- "merging/simple_copy_additions.json"
+```
+
+## Combining lists
+
+soon you might get to a point where you want to combine some nbt lists.
+for our example we're gonna create a recipe that always appends the name of an item to the lore of another item.
+
+Just specifying `"Lore": [ "$ i0.display.Name" ]` wouldn't work here, as this would just replace the lore completely.
+
+There is an extended syntax of the merging that allows us to change this behavior for certain paths.
+The merge is no longer just a string, but an object with a `value` and a `paths` attribute.
+
+While the former is just the same as our string previously, the latter is what allows us to change the merging.
+
+The `paths` attribute is an object that uses paths as keys and a string with the name of the mrege mode we want as the value.
+In this case our path to the lore is `display.Lore` and we want the mode `prepend`.
+The example should illustrate the syntax:
+
+```json
+--8<-- "merging/add_to_list.json"
+```
+
+!!!info "Why `prepend` and not `append`?"
+	When merging, we're considering our `result.data` object as base and `i0` as the new data.
+	So we're basically saying put the list from `i0` in front of `result.data`.  
+
+!!!black "Why `"$ [ i0.display.Name ]"` and not `[ "$ i0.display.Name" ]`?"
+	While writing this documentation I found a bug where the latter version glitched out for some reason.
+
+	I was unable to find the cause of this, so for now you'll have to do it this way with lists of strings.
+	Lists of objects seem to work fine though.
+
+Apart from `prepend`, there are a bunch of other merge modes available, such as `merge` (the default), `keep` or `append`.
+The full explanation of these merge modes is available [further down the page](#merge-modes).
+
+## Combining lists without duplicates
+
+The last section showed you how to combine lists.
+In practice, you often want to combine lists of `Enchantments` or `AttributeModifiers`.
+
+For both of these cases you don't want to have duplicates in there.
+`Enchantments` are unique by their `id` and `AttributeModifiers` by their `UUID`.
+
+To get this working in code, we need to step up our syntax even further.
+In the last section, we learned about specific merge modes.
+For this level of customization these standardized merge modes are not enough though.
+
+Nbt Crafting v3 allows you to create your own kind of specialized merge functions using dollar expressions.
+To make use of these we'll just use a dollar as the first character of our merge mode.
+
+This dollar expression will receive the variables `base` and `addition`, and should return a combined result.
+For our enchantment example we could use: `$ distinct(combine(base, addition), e -> e.id)`.
+
+Let's digest this bit by bit:
+
+`combine(base, addition)`:
+:	This does nothing more than to simply append one list to the other.
+
+`e -> e.id`:
+:	This is a lambda expression that takes an element from the list,
+	in this case an enchantment and returns it's `id`.
+
+	For `{lvl: 2, id: "minecraft:sharpness"}`, this would resolve to `minecraft:sharpness`
+
+`distinct(...)`:
+:	This is a function that filters duplicate items out of a list.
+	The first argument is the list to filter, which in our case is the combined list.
+
+	The second argument is a lambda that tells the function how to determine equality.
+	In this case, we use our lambda to tell `distinct` that it should distinguish enchantments by their `id` only.
+
+Finally this is what our recipe could look like (this is a simplified version of the [full enchantment example below](#complex-enchantment-crafting)):
+
+```json
+--8<-- "merging/simple_add_enchantment.json"
+```
 
 ## Multiple sources
-The basic principle didn't change we're still using the dollar sign as the key in data tags.
 
-**But** we can now specify a list of dollar expressions. Cool. Problem number one solved. If that's all that you need - I'm happy for you.
+From time to time, we want to combine the NBT data from multiple ingredients.
+The syntax for this is actually pretty simple, as we just replace the object/string we previously used with an array of these elements.
 
-!!! note
-	Examples needed!
+Here's an example that allows you two combine two enchanted books (this simple example doesn't handle duplicates).
 
-## Merge behavior
-Let's list all of the possible behaviors we could have with merging an object `B` into `A` and list them:
-
-| Name        | Description                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------- |
-| `overwrite` | In the first scenario we want to replace `A`'s value with the one from `B` no matter what happens.   |
-| `keep`      | The exact opposite: `A`'s value takes precedence if it is present. Otherwise use `B`'s.              |
-| `merge`     | The default one: `overwrite` for normal values but proceed merging for anything nested.              |
-| `update`    | This will only change `A` if there's a value already present. Otherwise do nothing.                  |
-
-For lists we have one more entry:
-
-| Name        | Description                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------- |
-| `append`    | This will put the value from `B` at the end of list `A`.                                             |
-
-## Granularly specifying merge behavior
-Like we learned in the previous section there are a lot of different ways two "merge" two JSON/NBT values.
-
-Now I'm introducing a lot of power to you because you can use them all on different portions of one tag.
-
-Instead of using a "simple" dollar expression for merging, you can also specify an object with the dollar expression specified in the `value` field.
-
-In the optional `paths` object you can specify the merge behavior for as many paths as you want.
-
-### Excursus: JSON Paths
-To understand how this works you need to know what JSON paths are. I don't want to go into detail here but they're basically a way to specify a path through some JSON to the value you want. You note down every key you encounter separated by a dot.
+!!!error "Broken recipe"
+	At the time of writing this recipe doesn't work correctly,
+	because Nbt Crafting fails to resolve the references correctly in crafting recipes with multiple of the same items.
+	See #47 and #57.
 
 ```json
-{
-	"bla": {
-		"bla": {
-			"test": 123
-		}
-	}
-}
+--8<-- "merging/multiple_sources.json"
 ```
 
-The path to `123` would be `bla.bla.test`.
+!!!info "A note about `Enchantments` and `StoredEnchantments`"
+	While both echanted gear and enchanted books use the same data format (`id` and `lvl`),
+	the former use `Enchantments` and the latter `StoredEnchantments`.
 
-If you encounter lists you note down the index you choose in square brackets (`[index]`). If this reminds you of [dollar operators](../dollars#operators) then you're right. In fact the concept of the child access operators is taken from JavaScript.
+	This is a common source of confusion, so keep that in mind.
 
-### Back to the topic
-Nbt Craftings system goes through all of the elements of the JSON data that should be merged in. For each of these elements it builds the JSON path (see above). And evaluates it against the `paths` object. 
+!!!warning "Mixing objects and strings"
+	While the specification allows mixing objects with `paths` and simple strings together,
+	the actual implementation currently doesn't support this due limitations with NBT lists.
 
-The `paths` object specifies paths as its keys and the corresponding [merge behavior](#merge-behavior) as its values.
+## Complex enchantment crafting
 
-To allow more complex path notations you can fence your paths in slashes (these things: `/`, lol) and then they *magically* become [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). I'm not gonna explain these things here but [regex101.com](https://regex101.com) is a good place to test them out. Keep in mind to escape all brackets and dots in your path with a double backslash!
+The following provides a more complete example of how you could implement adding one enchantment level per craft:
 
-An example:
 ```json
-{
-	"type": "crafting_shapeless",
-	"ingredients": [
-		{
-			"item": "minecraft:diamond_sword"
-		},
-		{
-			"item": "minecraft:blaze_rod"
-		}
-	],
-	"result": {
-		"item": "minecraft:diamond_sword",
-		"data": {
-			"$": {
-				"value": "i0",
-				"paths": {
-					"/Enchantments\\[\\d+\\]/": "append"
-				}
-			},
-			"Enchantments": [
-				{
-					"id": "minecraft:fire_aspect",
-					"lvl": 1
-				}
-			]
-		}
-	}
-}
+--8<-- "merging/complex_add_enchantment.json"
 ```
 
-This should let you add the *Fire Aspect* enchantment to diamond swords by combining them with a blaze rod!
+## Specification
+
+A merge dollar is identified by a `$` key at any position of a `data` tag.
+The data from the merges will always be merged into the parent object of the `$` tag.
+
+The content of a dollar merge declaration is an array of merge entries.
+If there is only a single merge entry, the list may be omitted and the entry can be specified directly.
+
+A merge entry is an object consisting of a `value` and optionally a `paths` tag:
+
+`value`:
+:	The `value` tag is a dollar expression *without a leading dollar*.
+	It may reference any of the ingredients and may return arbitrary data, except `null`.
+
+`paths`:
+	The `paths` tag is an object of paths specified in the keys that map to merge modes.
+	The paths may either be simple JSON paths (with dots for object access and brackets for list access) or
+	may be regular expressions.  
+	In case of regular expressions they must both begin and end with a forward slash (`/`).
+	Pay attention that you'll have to escape backslashes and quotes inside of the JSON string.
+
+### Merge modes
+
+The supported built-in merge modes are (with `B` being the base and `A` being the addition):
+
+| Mode        | General behavior                         | Object behavior          | List behavior                                      |
+|-------------|------------------------------------------|--------------------------|----------------------------------------------------|
+| `merge`     | `A`, if `B` doesn't exist, otherwise `B` | Recurses into the object | Recurses into the list, comparing indexes directly |
+| `keep`      | `A`, if `B` doesn't exist, otherwise `B` | -                        | -                                                  |
+| `overwrite` | `A` (removes `B` if it doesn't exist)    | -                        | -                                                  |
+| `update`    | `A`, if `B` exists, otherwise nothing    | -                        | -                                                  |
+| `preprend`  | `A`, if `B` doesn't exist, otherwise `B` | -                        | Puts the elements of `A` in front of `B`           |
+| `append`    | `A`, if `B` doesn't exist, otherwise `B` | -                        | Puts the elements of `A` after `B`                 |
+
+### Custom merge modes
+
+Custom merge modes may be specified by beginning the merge mode with a dollar (`$`).
+The following dollar expression will be evaluated with the variables `base` and `addition`.
+
+Returning `null` will remove the value from the parent object.
