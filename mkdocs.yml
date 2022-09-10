@@ -41,6 +41,7 @@ nav:
         - Dynamic Data:
             - Dollars: "nbt-capabilities/dynamic-data/dollars.md"
             - Dollar References: "nbt-capabilities/dynamic-data/dollar-references.md"
+            - Dollar Functions: "nbt-capabilities/dynamic-data/dollar-functions.md"
             - Nbt Merging: "nbt-capabilities/dynamic-data/nbt-merging.md"
     - Hints for modders: "modders.md"
     - JSON Preprocessor: "json-preprocessor.md"
