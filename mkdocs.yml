@@ -65,5 +65,9 @@ theme:
     favicon: "img/favicon.ico"
     main_color: "#3e7726"
 
+plugins:
+    - mermaid2
+    - search
+
 extra_css:
     - css/extra.css
