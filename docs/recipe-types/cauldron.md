@@ -15,9 +15,9 @@ This extends the matching algorithm of these recipes by the `fluid` property. Th
 
 Since lava can only contain one bucket but no split parts from that, the whole lava will be taken when the `levels` are greater than zero.
 
-[ingredient]: ../../recipe-parts/ingredients/ingredients
-[remainder]: ../../recipe-parts/ingredients/remainders
-[result]: ../../recipe-parts/results
+[ingredient]: ../../nbt-capabilities/ingredients/ingredients
+[remainder]: ../../nbt-capabilities/ingredients/remainders
+[result]: ../../nbt-capabilities/results
 
 ## Example
 ```json

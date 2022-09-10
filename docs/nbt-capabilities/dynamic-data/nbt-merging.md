@@ -2,7 +2,7 @@
 ## Introduction - a brief history
 Nbt merging, inheriting or copying, whatever you like to call it, was orignally just a special case of [dollars](../dollars).
 
-It worked really simple: Dollars let you access any kind of data so why not copy it onto [results](../../recipe-parts/results) or [remainders](../recipe-parts/ingredients/remainders)?
+It worked really simple: Dollars let you access any kind of data so why not copy it onto [results](../../nbt-capabilities/results) or [remainders](../remainders.md)?
 
 This quickly rose the first problem: What would you do if you wanted to copy the whole data? You can't really specify the target for the dollar expression.
 

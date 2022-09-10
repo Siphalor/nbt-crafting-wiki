@@ -10,15 +10,18 @@ The top slot which provides the modifier or ingredient item is set through the [
 The resulting potion/anything-that-you-want is defined through the [`result`][result].
 `result` is just the output stack.
 
-[Dollars](../../dynamic-data/dollars) are supported with the following entries:
+## Nbt Support
+
+Nbt support can be enabled through the [`nbtcrafting3:data`][data] recipe type.
+Brewing recipes expose the following dollar references:
 
 - `ingredient`: is the ingredient's data
 - `base`: is the data of the current base slot
 
-If you're annoyed of typing out potion stacks in your brewing recipe you might wanna look at [this feature](../../recipe-parts/ingredients/ingredients#potions).
+If you're annoyed of typing out potion stacks in your brewing recipe you might wanna look at [this feature](../../nbt-capabilities/ingredients/ingredients#potions).
 
-[ingredient]: ../../recipe-parts/ingredients/ingredients
-[result]: ../../recipe-parts/results
+[ingredient]: ../../nbt-capabilities/ingredients/ingredients
+[result]: ../../nbt-capabilities/results
 
 ## Example
 ```json

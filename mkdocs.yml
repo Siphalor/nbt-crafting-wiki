@@ -1,19 +1,19 @@
 site_name: "Nbt Crafting"
 site_author: "Siphalor"
-site_description: "The official wiki of Nbt Crafting 2"
-site_url: "https://mcwiki.siphalor.de/nbt-crafting/v2"
+site_description: "The official wiki of Nbt Crafting v3"
+site_url: "https://mcwiki.siphalor.de/nbt-crafting/v3"
 
 repo_name: "GitHub"
 repo_url: "https://github.com/Siphalor/nbt-crafting"
-edit_uri: "../nbt-crafting-wiki/edit/v2/docs/"
+edit_uri: "../nbt-crafting-wiki/edit/v3/docs/"
 
 extra:
     logo: "img/logo.png"
-    version: "v2"
+    version: "v3"
     nav_links:
-      - text: "Nbt Crafting v1"
+      - text: "Nbt Crafting v2"
         icon: "book"
-        url: "../v1"
+        url: "../v2"
       - text: "Modrinth"
         icon: "chess-rook"
         url: "https://www.modrinth.com/mod/nbt-crafting"
@@ -27,24 +27,23 @@ extra:
 
 nav:
     - Home: "home.md"
-    - Recipe Parts:
-        - Ingredients:
-            - Ingredients: "recipe-parts/ingredients/ingredients.md"
-            - Remainders: "recipe-parts/ingredients/remainders.md"
-        - Results: "recipe-parts/results.md"
+    - Updating from v2: "updating.md"
     - Recipe Types:
-        - Vanilla Recipes: "recipe-types/vanilla.md"
+        - Nbt Recipes: "recipe-types/data.md"
         - Anvil Recipes: "recipe-types/anvil.md"
         - Brewing Recipes: "recipe-types/brewing.md"
         - Cauldron Recipes: "recipe-types/cauldron.md"
         - Modded Recipes: "recipe-types/modded.md"
-    - Dynamic Data:
-        - Dollars: "dynamic-data/dollars.md"
-        - Dollar References: "dynamic-data/dollar-references.md"
-        - Nbt Merging: "dynamic-data/nbt-merging.md"
+    - Nbt Capabilities:
+        - Ingredients: "nbt-capabilities/ingredients.md"
+        - Remainders: "nbt-capabilities/remainders.md"
+        - Results: "nbt-capabilities/results.md"
+        - Dynamic Data:
+            - Dollars: "nbt-capabilities/dynamic-data/dollars.md"
+            - Dollar References: "nbt-capabilities/dynamic-data/dollar-references.md"
+            - Nbt Merging: "nbt-capabilities/dynamic-data/nbt-merging.md"
     - Hints for modders: "modders.md"
-    - Utilities: "utilities.md"
-    - Updating to v2: "updating.md"
+    - JSON Preprocessor: "json-preprocessor.md"
     - Experimental Features: "experimental.md"
     - Resources: "tools.md"
 

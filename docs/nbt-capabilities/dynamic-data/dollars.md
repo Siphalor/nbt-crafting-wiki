@@ -1,8 +1,13 @@
 # Dollars
+
+!!!warning
+	As of Nbt Crafting v3, the features described here are gated behind the [`nbtcrafting3:data` recipe type](../recipe-types/data).
+	This means that you have to use this recipe type for all recipes that use the features described here.
+
 Dollars are a technology which allows you to use simple mathematical expressions when applying data.
 
 ## Introduction
-In your [recipe output's](../../recipe-parts/results) and [recipe remainder's](../../recipe-parts/ingredients/remainders) data objects you may use dollar notation on every property. 
+In your [recipe output's](../../results) and [recipe remainder's](../../remainders) data objects you may use dollar notation on every property. 
 
 Dollars are noted as string values on your desired attributes:
 
@@ -38,7 +43,7 @@ Existing data types are:
 	Be careful when dividing numbers in dollars. `5 / 2` would normally resolve to `2` because whole number division would be used. `5.0 / 2` would instead to resolve to the possibly wanted `2.5`.
 
 ## References
-A key feature of dollars is referencing the nbt data of [ingredients](../../recipe-parts/ingredients/ingredients). This can be done by referencing the ingredient with it's _id_. The _id_ depends on the type of the recipe - a lot of the recipe types use `base` and `ingredient` for the respective ingredients. Shaped and shapeless recipes are a notable exception to this (As they have more than two ingredients, lol).
+A key feature of dollars is referencing the nbt data of [ingredients](../../ingredients). This can be done by referencing the ingredient with it's _id_. The _id_ depends on the type of the recipe - a lot of the recipe types use `base` and `ingredient` for the respective ingredients. Shaped and shapeless recipes are a notable exception to this (As they have more than two ingredients, lol).
 
 A full list of all reference ids for the recipe types can be found [here](../dollar-references).
 
@@ -137,25 +142,28 @@ It basically checks whether `A` is `true` or anything near true (mostly anything
 This part was former part of this page but because I largely expanded it I decided to give it it's own page. See [Nbt merging](../nbt-merging).
 
 ## Dynamic stack count
-See [experimental features](../../experimental).
+See [experimental features](../../../experimental).
 
 ## Example
-The following provides a way of slowly converting a wooden sword to sticks via dollars and [recipe remainders](../../recipe-parts/ingredients/remainders).
+The following provides a way of slowly converting a wooden sword to sticks via dollars and [recipe remainders](../../remainders).
 
 ```json
 {
-	"type": "crafting_shapeless",
-	"ingredients": [
-		{
-			"item": "minecraft:wooden_sword",
-			"remainder": {
+	"type": "nbtcrafting3:data",
+	"recipe": {
+		"type": "crafting_shapeless",
+		"ingredients": [
+			{
 				"item": "minecraft:wooden_sword",
-				"data": {
-					"Damage": "$ i0.Damage + 2"
+				"remainder": {
+					"item": "minecraft:wooden_sword",
+					"data": {
+						"Damage": "$ i0.Damage + 2"
+					}
 				}
 			}
-		}
-	],
-	"result": { "item": "minecraft:stick" }
+		],
+		"result": { "item": "minecraft:stick" }
+	}
 }
 ```

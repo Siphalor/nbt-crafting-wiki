@@ -1,9 +1,14 @@
 # Ingredients
+
+!!!warning
+	As of Nbt Crafting v3, the features described here are gated behind the [`nbtcrafting3:data` recipe type](../recipe-types/data).
+	This means that you have to use this recipe type for all recipes that use the features described here.
+
 ## Basic Usage
 
 The `data` property of each ingredient splits into a `require` and a `deny` section.
 
-Like the [results](../../results), these are JSON objects representing the NBT tag of the item. As always the json data is passed through the [JSON Preprocessor](../../../utilities#json-preprocessor).
+Like the [results](../results), these are JSON objects representing the NBT tag of the item. As always the json data is passed through the [JSON Preprocessor](../../json-preprocessor).
 
 All properties with their values referenced in `require` **must** be present with the exact values on the item.
 
@@ -15,21 +20,24 @@ Example:
 
 ``` json
 {
-	"type": "crafting_shapeless",
-	"ingredients": [
-		{
-			"item": "minecraft:diamond_sword",
-			"data": {
-				"require": {
-					"Damage": 2
-				},
-				"deny": {
-					"happy": "yes"
+	"type": "nbtcrafting3:data",
+	"recipe": {
+		"type": "crafting_shapeless",
+		"ingredients": [
+			{
+				"item": "minecraft:diamond_sword",
+				"data": {
+					"require": {
+						"Damage": 2
+					},
+					"deny": {
+						"happy": "yes"
+					}
 				}
 			}
-		}
-	],
-	...
+		],
+		...
+	}
 }
 ```
 This would require a diamond sword with damage 2 which seams to be unhappy 😢
@@ -53,21 +61,24 @@ Example:
 This will match all items with a `Damage` value of 40 or less.
 
 ## Potions
-Potions are annoying to clarify especially when working with [brewing recipes](../../../recipe-types/brewing). Therefore Nbt Crafting introduces a special shorthand for it.
+Potions are annoying to clarify especially when working with [brewing recipes](../../recipe-types/brewing). Therefore Nbt Crafting introduces a special shorthand for it.
 
 You can now use `potion` instead of the `item` key in all ingredients, remainders and results. An example brewing recipe using this feature could look like this:
 
 ```json
 {
-	"type": "nbtcrafting:brewing",
-	"base": {
-		"potion": "minecraft:regeneration"
-	},
-	"ingredient": {
-		"item": "minecraft:stick"	
-	},
-	"result": {
-		"potion": "minecraft:swiftness"
+	"type": "nbtcrafting3:data",
+	"recipe": {
+		"type": "nbtcrafting:brewing",
+		"base": {
+			"potion": "minecraft:regeneration"
+		},
+		"ingredient": {
+			"item": "minecraft:stick"	
+		},
+		"result": {
+			"potion": "minecraft:swiftness"
+		}
 	}
 }
 ```

@@ -1,4 +1,13 @@
-# Welcome to the Nbt Crafting 2.0 wiki!
+# Welcome to the Nbt Crafting v3 wiki!
+
+!!! warning
+	Nbt Crafting v3 is in alpha state.
+	While the basic concepts might remain working, expect breakage.
+	There are no stability guarantees for the Java API.
+
+	Links in this wiki might also change and break during the development process.
+	
+	[Information about updating from Nbt Crafting v2](../updating)
 
 Nbt Crafting is a mod which finally introduces nbt-related recipes.
 
@@ -10,45 +19,56 @@ Nbt Crafting is a mod which finally introduces nbt-related recipes.
 
 If you want to get started with datapacks and recipes in Minecraft you can check out the [Resources](../tools) site.
 
-For detailed information see [recipe results](../recipe-parts/ingredients/remainders) and [recipe ingredients](../recipe-parts/ingredients/ingredients).
+## Basic usage
 
-!!! note
-	[Click here to see notes about updating to v2](../updating)
+The basic starting point is using the `nbtcrafting3:data` recipe type.
+This special recipe type allows you to use the Nbt Crafting functionality inside of your recipe.
 
-You might also want to add [brewing](../recipe-types/brewing), [cauldron](../recipe-types/cauldron) or [anvil](../recipe-types/anvil) recipes.
-
-Go [here](../modders) if you're a modder and want to work with Nbt Crafting.
+It works by specifying a `recipe` object, which contains the normal recipe type and data.
+See below for an example.
 
 ## Example Recipe
 Sometimes one Hello-World-ish example is worth a thousand words.
 
 ```json
 {
-	"type": "crafting_shapeless",
-	"ingredients": [
-		{
-			"item": "minecraft:diamond_sword",
-			"data": {
-				"require": {
-					"Damage": "$..40"
+	"type": "nbtcrafting3:data",
+	"recipe": {
+		"type": "crafting_shapeless",
+		"ingredients": [
+			{
+				"item": "minecraft:diamond_sword",
+				"data": {
+					"require": {
+						"Damage": "$..40"
+					}
 				}
-			}
-		},
-		{ "item": "minecraft:diamond" }
-	],
-	"result": {
-		"item": "minecraft:diamond_axe",
-		"data": {
-			"display": {
-				"Name": "{\"text\":\"Battle Axe\"}"
 			},
-			"Enchantments": [
-				{
-					"id": "minecraft:sharpness",
-					"lvl": 10
-				}
-			]
+			{ "item": "minecraft:diamond" }
+		],
+		"result": {
+			"item": "minecraft:diamond_axe",
+			"data": {
+				"display": {
+					"Name": "{\"text\":\"Battle Axe\"}"
+				},
+				"Enchantments": [
+					{
+						"id": "minecraft:sharpness",
+						"lvl": 10
+					}
+				]
+			}
 		}
 	}
 }
 ```
+
+## More information
+
+For detailed information see [recipe results](../nbt-capabilities/ingredients/remainders) and [recipe ingredients](../nbt-capabilities/ingredients/ingredients).
+
+You might also want to add [brewing](../recipe-types/brewing), [cauldron](../recipe-types/cauldron) or [anvil](../recipe-types/anvil) recipes.
+
+Go [here](../modders) if you're a modder and want to work with Nbt Crafting.
+
