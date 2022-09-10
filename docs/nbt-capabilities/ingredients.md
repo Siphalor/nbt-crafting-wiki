@@ -54,11 +54,28 @@ If you want to apply a recipe if a numeric nbt value is in a specific range, you
 
 Example:
 ```json
-"require": {
-	"Damage": "$..40"
+{
+	"require": {
+		"Damage": "$..40"
+	}
 }
 ```
 This will match all items with a `Damage` value of 40 or less.
+
+### Dollar conditions
+Alternatively to the above, there is also an even more powerful way to specify conditions for the nbt data.
+The `conditions` array allows you to specify a list of [dollar expressions](../dynamic-data/dollars) that must evaluate to a truthy value for the recipe to be applied.
+
+Inside these expressions, the stack and it's NBT data will be available through the `$` reference.
+
+The example from the number ranges above could for example also be written the following way:
+```json
+{
+	"conditions": [
+		"$.Damage != null ? $.Damage <= 40 : false"
+	]
+}
+```
 
 ## Potions
 Potions are annoying to clarify especially when working with [brewing recipes](../../recipe-types/brewing). Therefore Nbt Crafting introduces a special shorthand for it.
