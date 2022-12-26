@@ -6,7 +6,7 @@ Basically every recipe output has an additional `data` property:
 	"type": "crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "minecraft:apple",
+			"item": "minecraft:apple"
 		}
 	],
 	"result": {
